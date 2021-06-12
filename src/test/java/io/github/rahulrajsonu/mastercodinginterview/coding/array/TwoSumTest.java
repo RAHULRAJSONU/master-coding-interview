@@ -11,6 +11,7 @@ class TwoSumTest {
         int[] input = new int[]{1,3,7,9,2};
         assertArrayEquals(new int[]{3,4},TwoSum.selfApproach(input,11));
         assertArrayEquals(new int[]{0,4},TwoSum.selfApproach(input,3));
+        assertArrayEquals(new int[]{0,1},TwoSum.selfApproach(input,4));
         Exception exception = assertThrows(RuntimeException.class, ()-> {
            TwoSum.selfApproach(input,15);
         });
