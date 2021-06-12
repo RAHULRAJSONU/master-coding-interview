@@ -16,5 +16,9 @@ class TwoSumTest {
            TwoSum.selfApproach(input,15);
         });
         assertEquals("Could not found the numbers",exception.getMessage());
+        Exception exception2 = assertThrows(RuntimeException.class, ()-> {
+           TwoSum.selfApproach(new int[0],15);
+        });
+        assertEquals("Could not found the numbers",exception2.getMessage());
     }
 }
