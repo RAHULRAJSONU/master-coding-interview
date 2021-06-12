@@ -22,6 +22,6 @@ public class TwoSum {
                 return indices;
             }
         }
-        return indices;
+        throw new RuntimeException("Could not found the numbers");
     }
 }
