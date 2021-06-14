@@ -10,6 +10,7 @@ package io.github.rahulrajsonu.mastercodinginterview.coding.array;
 public class MaxContainerArea {
 
     public static int bruitForceSolution(int[] arr){
+        if (arr.length<=1) return 0;
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length-1; i++) {
             for (int j = i+1; j < arr.length; j++) {
@@ -18,5 +19,24 @@ public class MaxContainerArea {
             }
         }
         return max;
+    }
+
+    public static int optimizedSolution(int[] arr){
+        if (arr.length<=1) return 0;
+        int minC = 0;
+        int maxC = arr.length-1;
+        int maxArea = Integer.MIN_VALUE;
+        while (minC < maxC) {
+            int area = (Integer.min(arr[minC], arr[maxC])*(maxC-minC));
+            if (area > maxArea){
+                maxArea = area;
+            }
+            if(arr[minC]<arr[maxC]){
+                minC++;
+            }else {
+                maxC--;
+            }
+        }
+        return maxArea;
     }
 }
