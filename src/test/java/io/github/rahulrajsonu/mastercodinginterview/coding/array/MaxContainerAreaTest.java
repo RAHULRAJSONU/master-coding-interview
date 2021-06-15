@@ -13,15 +13,15 @@ class MaxContainerAreaTest {
         int[] input2 = new int[]{1};
         int[] input3 = new int[0];
         int[] input4 = new int[]{7,12,2,3,9};
-        assertEquals(MaxContainerArea.bruitForceSolution(input),12);
+        assertEquals(MaxContainerArea.bruteForceSolution(input),12);
         assertEquals(MaxContainerArea.optimizedSolution(input),12);
-        assertEquals(MaxContainerArea.bruitForceSolution(input1),28);
+        assertEquals(MaxContainerArea.bruteForceSolution(input1),28);
         assertEquals(MaxContainerArea.optimizedSolution(input1),28);
-        assertEquals(MaxContainerArea.bruitForceSolution(input2),0);
+        assertEquals(MaxContainerArea.bruteForceSolution(input2),0);
         assertEquals(MaxContainerArea.optimizedSolution(input2),0);
-        assertEquals(MaxContainerArea.bruitForceSolution(input3),0);
+        assertEquals(MaxContainerArea.bruteForceSolution(input3),0);
         assertEquals(MaxContainerArea.optimizedSolution(input3),0);
-        assertEquals(MaxContainerArea.bruitForceSolution(input4),28);
+        assertEquals(MaxContainerArea.bruteForceSolution(input4),28);
         assertEquals(MaxContainerArea.optimizedSolution(input4),28);
     }
 }

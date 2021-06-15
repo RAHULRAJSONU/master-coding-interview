@@ -9,7 +9,7 @@ package io.github.rahulrajsonu.mastercodinginterview.coding.array;
  */
 public class MaxContainerArea {
 
-    public static int bruitForceSolution(int[] arr){
+    public static int bruteForceSolution(int[] arr){
         if (arr.length<=1) return 0;
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length-1; i++) {
@@ -31,7 +31,7 @@ public class MaxContainerArea {
             if (area > maxArea){
                 maxArea = area;
             }
-            if(arr[minC]<arr[maxC]){
+            if(arr[minC] <= arr[maxC]){
                 minC++;
             }else {
                 maxC--;
