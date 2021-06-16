@@ -31,4 +31,28 @@ public class RainwaterTrapping {
         return totalWater;
     }
 
+    public static int optimizedSolution(int[] arr){
+        int total = 0;
+        int lMax = 0, rMax = 0;
+        int lCur = 0, rCur = arr.length-1;
+        while (lCur < rCur){
+            if (arr[lCur] <= arr[rCur]){
+                if(lMax > arr[lCur]){
+                    total += (lMax-arr[lCur]);
+                }else {
+                    lMax = arr[lCur];
+                }
+                lCur++;
+            } else {
+                if(arr[rCur] < rMax){
+                    total += (rMax-arr[rCur]);
+                }else {
+                    rMax = arr[rCur];
+                }
+                rCur--;
+            }
+        }
+        return total;
+    }
+
 }
