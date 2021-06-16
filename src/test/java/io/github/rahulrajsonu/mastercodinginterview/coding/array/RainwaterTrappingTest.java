@@ -12,9 +12,9 @@ class RainwaterTrappingTest {
         int[] input1 = new int[0];
         int[] input2 = new int[]{3};
         int[] input3 = new int[]{3,4,3};
-        assertEquals(8,RainwaterTrapping.bruitforceSolution(input));
-        assertEquals(0,RainwaterTrapping.bruitforceSolution(input1));
-        assertEquals(0,RainwaterTrapping.bruitforceSolution(input2));
-        assertEquals(0,RainwaterTrapping.bruitforceSolution(input3));
+        assertEquals(8,RainwaterTrapping.bruteforceSolution(input));
+        assertEquals(0,RainwaterTrapping.bruteforceSolution(input1));
+        assertEquals(0,RainwaterTrapping.bruteforceSolution(input2));
+        assertEquals(0,RainwaterTrapping.bruteforceSolution(input3));
     }
 }
