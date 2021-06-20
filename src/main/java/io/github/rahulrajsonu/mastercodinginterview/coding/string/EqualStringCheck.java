@@ -9,4 +9,8 @@ package io.github.rahulrajsonu.mastercodinginterview.coding.string;
  */
 public class EqualStringCheck {
 
+    public static boolean check(String s, String t){
+        return Boolean.TRUE;
+    }
+
 }
