@@ -9,7 +9,7 @@ import java.util.Stack;
  * Given Input: S= ab#d, T= del##  => not equal
  * Given Input: S= ab#l, T= at#l  => equal
  */
-public class EqualStringCheck {
+public class BackspaceStringCompare {
 
     /**
      * Input: ab#c#de##
