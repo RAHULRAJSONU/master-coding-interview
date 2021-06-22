@@ -8,11 +8,12 @@ class EqualStringCheckTest {
 
     @Test
     void check() {
-        String s1 = "AB#C#D";
-        String t1 = "B#C#DA";
-        assertFalse(EqualStringCheck.check(s1,t1));
-        String s2 = "AB#C#D";
-        String t2 = "AD#C#D";
-        assertTrue(EqualStringCheck.check(s2,t2));
+        assertFalse(EqualStringCheck.check("AB#C#D","B#C#DA"));
+        assertFalse(EqualStringCheck.check("AB#C####D","B#C#DA"));
+        assertFalse(EqualStringCheck.check("##AB#C#D","B#C#DA###"));
+        assertTrue(EqualStringCheck.check("AB#C#D","AD#C#D"));
+        assertTrue(EqualStringCheck.check("AB#C#D##","AD#C#D##"));
+        assertTrue(EqualStringCheck.check("AB","AB"));
+        assertTrue(EqualStringCheck.check("",""));
     }
 }
