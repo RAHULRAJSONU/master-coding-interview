@@ -16,4 +16,15 @@ class EqualStringCheckTest {
         assertTrue(EqualStringCheck.check("AB","AB"));
         assertTrue(EqualStringCheck.check("",""));
     }
+
+    @Test
+    void checkUsingStack() {
+        assertFalse(EqualStringCheck.checkUsingStack("AB#C#D","B#C#DA"));
+        assertFalse(EqualStringCheck.checkUsingStack("AB#C####D","B#C#DA"));
+        assertFalse(EqualStringCheck.checkUsingStack("##AB#C#D","B#C#DA###"));
+        assertTrue(EqualStringCheck.checkUsingStack("AB#C#D","AD#C#D"));
+        assertTrue(EqualStringCheck.checkUsingStack("AB#C#D##","AD#C#D##"));
+        assertTrue(EqualStringCheck.checkUsingStack("AB","AB"));
+        assertTrue(EqualStringCheck.checkUsingStack("",""));
+    }
 }
