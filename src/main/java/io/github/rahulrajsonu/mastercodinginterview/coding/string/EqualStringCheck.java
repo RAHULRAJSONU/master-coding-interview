@@ -1,5 +1,7 @@
 package io.github.rahulrajsonu.mastercodinginterview.coding.string;
 
+import java.util.Stack;
+
 /**
  * Given two strings S and T,
  * Return if they equal when both are typed out.
@@ -18,6 +20,12 @@ public class EqualStringCheck {
         return dS.equals(dT);
     }
 
+    public static boolean checkUsingStack(String s, String t){
+        String dS = decodeUsingStack(s);
+        String dT = decodeUsingStack(t);
+        return dS.equals(dT);
+    }
+
     private static String decode(String s) {
         String collector = "";
         int next = 0;
@@ -32,6 +40,24 @@ public class EqualStringCheck {
             next++;
         }
         return collector;
+    }
+
+    private static String decodeUsingStack(String s){
+        Stack<Character> stack = new Stack<>();
+        int cursor = 0;
+        while (cursor < s.length()){
+            if(s.charAt(cursor)=='#'){
+                if(!stack.isEmpty())stack.pop();
+            }else {
+                stack.push(s.charAt(cursor));
+            }
+            cursor++;
+        }
+        String result = "";
+        while (!stack.isEmpty()){
+            result = String.valueOf(stack.pop()).concat(result);
+        }
+        return result;
     }
 
 }
