@@ -69,28 +69,8 @@ public class BackspaceStringCompare {
 
         while (sp >= 0 || tp >= 0){
             if (s.charAt(sp) == '#' || t.charAt(tp) == '#'){
-                if(s.charAt(sp) == '#'){
-                    int hC = 2;
-                    while (sp > 0 && hC > 0) {
-                        sp--;
-                        hC--;
-
-                        if(s.charAt(sp)=='#'){
-                            hC = hC+2;
-                        }
-                    }
-                }
-                if(t.charAt(tp) == '#'){
-                    int hC = 2;
-                    while (tp > 0 && hC > 0){
-                        tp--;
-                        hC--;
-
-                        if(t.charAt(tp)=='#'){
-                            hC = hC+2;
-                        }
-                    }
-                }
+                sp = backspace(s, sp);
+                tp = backspace(t, tp);
             } else {
                 if(s.charAt(sp) != t.charAt(tp)){
                     return Boolean.FALSE;
@@ -101,6 +81,21 @@ public class BackspaceStringCompare {
             }
         }
         return Boolean.TRUE;
+    }
+
+    private static int backspace(String s, int sp) {
+        if(s.charAt(sp) == '#'){
+            int hC = 2;
+            while (sp > 0 && hC > 0) {
+                sp--;
+                hC--;
+
+                if(s.charAt(sp)=='#'){
+                    hC = hC+2;
+                }
+            }
+        }
+        return sp;
     }
 
 }
