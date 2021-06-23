@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BackspaceStringCompareTest {
 
     @Test
-    void check() {
+    void checkTest() {
         assertFalse(BackspaceStringCompare.check("AB#C#D","B#C#DA"));
         assertFalse(BackspaceStringCompare.check("AB#C####D","B#C#DA"));
         assertFalse(BackspaceStringCompare.check("##AB#C#D","B#C#DA###"));
@@ -18,7 +18,7 @@ class BackspaceStringCompareTest {
     }
 
     @Test
-    void checkUsingStack() {
+    void checkUsingStackTest() {
         assertFalse(BackspaceStringCompare.checkUsingStack("AB#C#D","B#C#DA"));
         assertFalse(BackspaceStringCompare.checkUsingStack("AB#C####D","B#C#DA"));
         assertFalse(BackspaceStringCompare.checkUsingStack("##AB#C#D","B#C#DA###"));
@@ -26,5 +26,16 @@ class BackspaceStringCompareTest {
         assertTrue(BackspaceStringCompare.checkUsingStack("AB#C#D##","AD#C#D##"));
         assertTrue(BackspaceStringCompare.checkUsingStack("AB","AB"));
         assertTrue(BackspaceStringCompare.checkUsingStack("",""));
+    }
+
+    @Test
+    void optimizedSolutionTest(){
+        assertFalse(BackspaceStringCompare.optimizedSolution("AB#C#D","B#C#DA"));
+        assertFalse(BackspaceStringCompare.optimizedSolution("AB#C####D","B#C#DA"));
+        assertFalse(BackspaceStringCompare.optimizedSolution("##AB#C#D","B#C#DA###"));
+        assertTrue(BackspaceStringCompare.optimizedSolution("AB#C#D","AD#C#D"));
+        assertTrue(BackspaceStringCompare.optimizedSolution("AB#C#D##","AD#C#D##"));
+        assertTrue(BackspaceStringCompare.optimizedSolution("AB","AB"));
+        assertTrue(BackspaceStringCompare.optimizedSolution("",""));
     }
 }
