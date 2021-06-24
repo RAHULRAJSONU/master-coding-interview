@@ -9,5 +9,8 @@ class LongestSubstringTest {
     @Test
     void find() {
         assertEquals(3, LongestSubstring.find("abccabb"));
+        assertEquals(1, LongestSubstring.find("cccccc"));
+        assertEquals(0, LongestSubstring.find(""));
+        assertEquals(4, LongestSubstring.find("abcbda"));
     }
 }
