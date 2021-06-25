@@ -9,6 +9,18 @@ class PalindromeTest {
     @Test
     void traverseInwardCheck() {
         assertTrue(Palindrome.traverseInwardCheck("abcba"));
+        assertTrue(Palindrome.traverseInwardCheck("abccba"));
+        assertTrue(Palindrome.traverseInwardCheck("a;b-Cba"));
+        assertTrue(Palindrome.traverseInwardCheck("a0;b-Cb0a"));
+        assertTrue(Palindrome.traverseInwardCheck("aaa"));
+        assertTrue(Palindrome.traverseInwardCheck("a"));
+        assertTrue(Palindrome.traverseInwardCheck(""));
+    }
+
+    @Test
+    void traverseOutwardCheck() {
+        assertTrue(Palindrome.traverseInwardCheck("abcba"));
+        assertTrue(Palindrome.traverseInwardCheck("abccba"));
         assertTrue(Palindrome.traverseInwardCheck("a;b-Cba"));
         assertTrue(Palindrome.traverseInwardCheck("a0;b-Cb0a"));
         assertTrue(Palindrome.traverseInwardCheck("aaa"));
