@@ -33,25 +33,24 @@ public class LongestSubstring {
         return maxLen;
     }
 
-    public static int find(String str) {
+    /**
+     *
+     * input => abccabb
+     * input => cccccc
+     */
+    public static int findOptimized(String str) {
         int maxLen = 0;
         int left = 0, right = 0;
         Map<Character, Integer> cache = new HashMap<>();
         while (right < str.length()){
-            if(!cache.containsKey(str.charAt(right))){
-                cache.put(str.charAt(right),1);
-                right++;
-            } else {
-                cache.clear();
-                if(right-left > maxLen){
-                    maxLen = (right-left);
-                }
-                left++;
-                right = left;
+            Character currentChar = str.charAt(right);
+            int prevSeen = cache.getOrDefault(currentChar, Integer.MIN_VALUE);
+            if (prevSeen >= left) {
+                left = prevSeen+1;
             }
-        }
-        if(right-left > maxLen){
-            maxLen = (right-left);
+            cache.put(currentChar, right);
+            maxLen = Math.max(maxLen, right - left + 1);
+            right++;
         }
         return maxLen;
     }
