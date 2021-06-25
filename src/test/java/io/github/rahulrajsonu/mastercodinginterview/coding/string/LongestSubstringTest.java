@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class LongestSubstringTest {
 
     @Test
-    void find() {
-        assertEquals(3, LongestSubstring.find("abccabb"));
-        assertEquals(1, LongestSubstring.find("cccccc"));
-        assertEquals(0, LongestSubstring.find(""));
-        assertEquals(4, LongestSubstring.find("abcbda"));
+    void findOptimized() {
+        assertEquals(3, LongestSubstring.findOptimized("abccabb"));
+        assertEquals(1, LongestSubstring.findOptimized("cccccc"));
+        assertEquals(0, LongestSubstring.findOptimized(""));
+        assertEquals(4, LongestSubstring.findOptimized("abcbda"));
     }
 
     @Test
