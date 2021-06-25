@@ -7,6 +7,11 @@ package io.github.rahulrajsonu.mastercodinginterview.coding.string;
  */
 public class Palindrome {
 
+    public static void main(String[] args) {
+        String s = "asdfgh";
+        System.out.println(s.length()/2);
+    }
+
     public static boolean traverseInwardCheck(String str) {
         str = trim(str);
         int left = 0;
@@ -14,6 +19,19 @@ public class Palindrome {
         while (left <= right){
             if(str.charAt(left) != str.charAt(right))
                 return Boolean.FALSE;
+        }
+        return Boolean.TRUE;
+    }
+
+    public static boolean traverseOutwardCheck(String str){
+        str = trim(str);
+        int mid = str.length()/2;
+        int left = str.length()%2!=0?mid:mid-1;
+        int right = str.length()%2!=0?mid:mid+1;
+        while (left >= 0 && right < str.length()){
+            if(str.charAt(left) != str.charAt(right)){
+                return Boolean.FALSE;
+            }
         }
         return Boolean.TRUE;
     }
