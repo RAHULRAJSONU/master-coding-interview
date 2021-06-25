@@ -19,6 +19,8 @@ public class Palindrome {
         while (left <= right){
             if(str.charAt(left) != str.charAt(right))
                 return Boolean.FALSE;
+            left++;
+            right--;
         }
         return Boolean.TRUE;
     }
@@ -32,6 +34,8 @@ public class Palindrome {
             if(str.charAt(left) != str.charAt(right)){
                 return Boolean.FALSE;
             }
+            left--;
+            right++;
         }
         return Boolean.TRUE;
     }
