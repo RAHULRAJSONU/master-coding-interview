@@ -9,6 +9,16 @@ class ReverseSpecificPositionInLinkedListTest {
     @Test
     void reverse() {
         int[] vals = new int[]{1,2,3,4,5,6};
-        Utils.print(ReverseSpecificPositionInLinkedList.reverse(Utils.construct(vals),2,4));
+        int[] rev = new int[]{4,3,2,1,5,6};
+//        Utils.print(ReverseSpecificPositionInLinkedList.reverse(Utils.construct(vals),1,4));
+        assertTrue(Utils.match(ReverseSpecificPositionInLinkedList.reverse(Utils.construct(vals),1,4),Utils.construct(rev)));
+    }
+
+    @Test
+    void reverseSublist() {
+        int[] vals = new int[]{1,2,3,4,5,6};
+        int[] rev = new int[]{4,3,2,1,5,6};
+//        Utils.print(ReverseSpecificPositionInLinkedList.reverseSublist(Utils.construct(vals),1,4));
+        assertTrue(Utils.match(ReverseSpecificPositionInLinkedList.reverse(Utils.construct(vals),1,4),Utils.construct(rev)));
     }
 }
