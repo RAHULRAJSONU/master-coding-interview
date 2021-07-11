@@ -36,4 +36,28 @@ public class ReverseSpecificPositionInLinkedList {
             return newList;
         }
     }
+
+    public static Node reverseSublist(Node head, int m, int n){
+        if(null == head || null == head.next){
+            return head;
+        }
+        Node dummy = new Node(0);
+        dummy.next = head;
+        Node nodeBeforeSublist = dummy;
+        Node current = head;
+        int counter = 1;
+        while (counter < m){
+            nodeBeforeSublist = current;
+            current = current.next;
+            counter++;
+        }
+        while (m < n){
+            Node nodeToBeExt = current.next;
+            current.next = nodeToBeExt.next;
+            nodeToBeExt.next = nodeBeforeSublist.next;
+            nodeBeforeSublist.next = nodeToBeExt;
+            m++;
+        }
+        return dummy.next;
+    }
 }
